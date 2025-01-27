@@ -1,0 +1,20 @@
+.containe{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+
+/* .header{
+    width:1140px;
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    background-color:#FFFFFF;
+    border-radius:16px;
+    border: 1px solid #E4E4E4;
+    margin: 28px 150px 36px 150px;
+    position: relative;
+    z-index: -2;
+} */

@@ -1,0 +1,86 @@
+.table{
+    width: 1140px;
+    height: 737;
+    
+    border: 1px solid #E4E4E4;
+    margin: 20px 150px 94px 150px;
+    background-color: #ffffff;
+    
+    border-spacing: 0;
+    border-radius: 30px;
+    border-collapse:separate;
+    
+    border-radius: 10px;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+   
+}
+.table thead{
+    background-color: #F2F2F2;
+    height: 70px;
+   border: none;
+    border-radius: initial;
+    
+}
+.table thead th{
+/* padding: 10px 0; */
+font-size: 18px;
+font-weight: 500;
+text-align: right;
+color: #282828;
+padding: 34px 44px;
+margin-right: 104px;
+
+}
+
+.table tbody tr{
+    border-bottom: 1px solid #f2f2f2;
+    
+    height: 70px;
+}
+.table tbody td{
+    padding: 16px 52px 18px;
+    font-size: 14px;
+font-weight: 400;
+text-align: right;
+color: #282828;
+padding: 34px 44px;
+margin-right: 104px;
+}
+
+.button{
+    border: none;
+    background-color:inherit;
+}
+.icon{
+    display: flex;
+   justify-content: space-between;
+}
+.edit{
+    margin-left: 30px;
+}
+/* table {
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+  } */
+ 
+  /* tr:nth-child(even) {
+    background-color: #f2f2f2;
+  } */
+  /* required css to make rounded table (below) */
+   .table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom:1px solid #F2F2F2 ;
+  }
+  /* tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  } */
+  /* tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  } */
