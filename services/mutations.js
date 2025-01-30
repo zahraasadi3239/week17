@@ -44,4 +44,10 @@ const useUpdateProduct = () => {
   return useMutation({ mutationFn, onSuccess });
 };
 
-export { useRegister, useLogin, useCreateProduct, useDeleteProduct,useUpdateProduct };
+export {
+  useRegister,
+  useLogin,
+  useCreateProduct,
+  useDeleteProduct,
+  useUpdateProduct,
+};

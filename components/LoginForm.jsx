@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { cookies } from "next/headers";
 import Link from "next/link";
 import styles from "./LoginForm.module.css";
 import { Formik, Form, ErrorMessage, Field } from "formik";
@@ -30,8 +30,8 @@ function LoginForm() {
       return alert("User Name and Password is Necessary");
     mutate(form, {
       onSuccess: (data) => {
-       console.log(data)
-       setCookie("token", data.token)
+       console.log(data.data.token)
+       setCookie(data.data.token)
         router.push("/products");
       
       },

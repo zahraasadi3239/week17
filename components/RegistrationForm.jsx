@@ -21,7 +21,7 @@ function RegistrationForm() {
     setForm((form) => ({ ...form, [event.target.name]: event.target.value }));
   };
   const registerHandler = (event) => {
-   
+   console.log("hello")
     event.preventDefault();
     
     const { username, password, comfirmPassword } = form;
@@ -31,12 +31,14 @@ function RegistrationForm() {
 
     if (password !== comfirmPassword)
       return alert("Passwords Is'nt The Same.");
-
+console.log("hello2")
     mutate(
       { username, password },
       {
         onSuccess: (data) => {
+          console.log("hello3")
           console.log(data)
+         
           router.push("/login")
          
           console.log(data.data.message);
