@@ -7,9 +7,7 @@ function EditModal({
   editedProduct,
   handleEdit,
 }) {
-  // const handleEdit=()=>{
-  //   console.log("hello")
-  // }
+  console.log(editedProduct)
   const handleChange = (event) => {
     const { name, value } = event.target;
     setEditedProduct({
@@ -24,7 +22,7 @@ function EditModal({
 
         <div className={styles.inputs}>
           <p className={styles.tilte}>نام کالا</p>
-          {/* <form onSubmit={handleEdit}> */}
+          <form onSubmit={handleEdit}>
             <input
               type="text"
               name="name"
@@ -45,7 +43,7 @@ function EditModal({
               value={editedProduct.price}
               onChange={handleChange}
             />
-          {/* </form> */}
+          </form>
         </div>
 
         <div>

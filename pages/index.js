@@ -1,7 +1,9 @@
+import HomePage from "../components/HomePage";
+
 export default function Home() {
   return (
     <div>
-      <h3>خوش آمدید</h3>
+      <HomePage />
     </div>
   );
 }

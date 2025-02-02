@@ -70,3 +70,40 @@
     width: 400px;
     height: 73px;
 }
+@media(max-width:600px){
+    .container{
+        width:470px ;
+        height: 523px;
+        margin: 214px 285px 214px 495px;
+    }
+    .container img{
+        width: 80px;
+      height: 84px;
+      margin-bottom: 10px;
+     
+    }
+    
+    .icon p{
+      
+      
+        font-size: 32px;
+        color: #282828;
+     
+    }
+    .form .input{
+        font-size: 32px;
+       
+    }
+    .form button{
+        font-size: 32px;
+    }
+    .form a{
+        font-size: 24px;
+    }
+    
+     }
+     @media(max-width:900px){
+        .container{
+        margin: 114px 285px 214px 495px;;
+        }
+     }

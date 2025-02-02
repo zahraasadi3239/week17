@@ -30,8 +30,9 @@ function LoginForm() {
       return alert("User Name and Password is Necessary");
     mutate(form, {
       onSuccess: (data) => {
-       console.log(data.data.token)
-       setCookie(data.data.token)
+       console.log(data.token)
+       setCookie("token",data.token)
+       setCookie("username",username)
         router.push("/products");
       
       },
@@ -56,7 +57,7 @@ function LoginForm() {
     <div className={styles.container}>
       <div className={styles.icon}>
         <img src="/Union.png" alt="Union" />
-        <h4>فرم ورود</h4>
+        <p>فرم ورود</p>
       </div>
       <Formik initialValues={initialValues} validationSchema={validationSchema}>
         <Form onSubmit={loginHandler}>

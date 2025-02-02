@@ -35,3 +35,9 @@
     top: 10px;
     left: 600;
 }
+@media (max-width:900px) {
+    .container{
+        width: 900px;
+    }
+    
+}

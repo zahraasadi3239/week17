@@ -11,7 +11,7 @@ function UserIsloggedIn() {
     <div className={styles.container}>
       <img src="./user.png" />
       <div>
-      <p className={styles.user}>میلاداعظمی</p>
+      <p className={styles.user}>{username}</p>
       <p className={styles.role}>مدیر</p>
       </div>
     </div>

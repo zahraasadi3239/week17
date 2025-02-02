@@ -35,7 +35,7 @@ const useDeleteProduct = () => {
 const useUpdateProduct = () => {
   const queryClient = useQueryClient();
 
-  const mutationFn = (data) => api.put("products", data);
+  const mutationFn = (data) => api.put(`products/${id}`, data);
 
   const onSuccess = async () => {
     await queryClient.invalidateQueries({ queryKey: ["all-products"] });

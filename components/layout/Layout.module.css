@@ -7,6 +7,10 @@
     gap: 1rem;
     background-color: #55a3f0;
     color: white;
+    /* width: 1140px;
+    height: 737;
+    margin: 10px 590px 8px 28px; */
+  
   }
  .header div a{
     /* display: flex; */
@@ -36,3 +40,20 @@
     color: lightblue;
   }
   
+ @media(max-width:600px){
+.header{
+
+  margin: 10px 145px 8px 28px;
+  
+}
+.header a{
+  font-size: 2rem;
+}
+ }
+ @media(max-width:900px){
+  .header{
+    /* width: 100%; */
+    margin: 40px 290px 8px 28px;
+  }
+ }
+ 

@@ -84,3 +84,19 @@ margin-right: 104px;
   tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
   } */
+
+  @media(max-width: 600px){
+    .table thead th{
+      font-size: 24px;
+    }
+    .table tbody td{
+font-size: 24px;
+    }
+  }
+  @media(max-width: 900px){
+    .table{
+      width: 600px;
+      height: 537;
+      margin: 20px 120px 94px 150px;
+    }
+  }

@@ -47,3 +47,20 @@
   position: absolute;
   left: 900px;
 }
+@media(max-width:900px){
+  .searchContainer{
+   
+      width: 900px;
+    
+   
+  }
+  .searchIcon{
+    position: absolute;
+  left: 700px;
+  top:20px
+  }
+  .searchInput{
+    position: absolute;
+    left: 700px;
+  }
+}

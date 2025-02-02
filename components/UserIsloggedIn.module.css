@@ -26,3 +26,16 @@ text-align: right;
     color: #282828;
     text-align: right;
 }
+
+@media(max-width:600px){
+   .container {
+   
+   margin: 10px 290px 8px 28px;
+   }
+   .role{
+    font-size: 18px;
+   }
+   .user{
+    font-size: 24px;
+   }
+}

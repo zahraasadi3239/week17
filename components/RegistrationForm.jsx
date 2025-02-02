@@ -71,7 +71,7 @@ console.log("hello2")
     <div className={styles.container}>
       <div className={styles.icon}>
         <img src="/Union.png" alt="Union" />
-        <h4>فرم ثبت نام</h4>
+        <p>فرم ثبت نام</p>
       </div>
       <Formik initialValues={initialValues} validationSchema={validationSchema}>
         <Form onSubmit={registerHandler}>

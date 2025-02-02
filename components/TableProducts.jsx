@@ -6,54 +6,82 @@ import EditModal from "./EditModal";
 import api from "../configs/api";
 import { Toaster,toast } from "react-hot-toast";
 import { useGetAllProducts } from "../services/queries";
-import { useDeleteProduct } from "../services/mutations";
+import { useDeleteProduct, useUpdateProduct } from "../services/mutations";
+import { getCookie } from "../utils/cookie";
+import { useRouter } from "next/router";
 
 
 function TableProducts({products,setProducts}) {
-
-  const{mutate}=useDeleteProduct();
-
-console.log(products)
   const [editModal, setEditModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [editedProduct, setEditedProduct] = useState(false);
+  const [editedProduct, setEditedProduct] = useState({
+    id:"",
+    name: "",
+    price: "",
+    quantity: ""
+  });
+const router=useRouter()
+  const token = getCookie("token");
+ 
+  if(!token){
+    router.push("/registration")
+  }
+
+  const{mutate}=useDeleteProduct();
+
+
+  
 
   const showDeleteModal = (id) => {
     setSelectedProduct(id);
     console.log(selectedProduct);
     setDeleteModal(true);
   };
+  const{editMutate,isPending}=useUpdateProduct()
   const handleEdit = async (event) => {
     event.preventDefault();
-    console.log("hello")
-    try {
-      const response = await api.put(`products/${editedProduct.id}`, {
+   editMutate(
+   {
         name: editedProduct.name,
         price: editedProduct.price,
         quantity: editedProduct.quantity,
-      });
-      const updateProducts = products.map((product) =>
-        product.id === editedProduct.id ? response.data : product
-      );
-      setProducts(updateProducts);
+      },{
+        onSuccess:(data)=>{
+          const updateProducts = products.map((product) =>
+            product.id === editedProduct.id ? response.data : product)
+          setProducts(updateProducts);
       toast.success("محصول باموفقیت بروزرسانی شد")
       setEditModal(false);
 
       setEditedProduct({ id: "", name: "", price: "", quantity: "" });
-    } catch (error) {
-      toast.error("Error updating products:", error);
+        },
+      
+    onError:(error)=>{
+      console.log(error)
     }
+        
+      }
+      
+      );
+      
+    
   };
   const handleSelectProduct = (product) => {
-    setEditedProduct(product);
+   console.log(product)
+  setEditedProduct({
+    ...editedProduct,name:product.name,price:product.price,quantity:product.quantity
+  });
+  console.log(editedProduct)
+  
     setEditModal(true);
+    
   };
   const deleteProduct =()=>{
 const data={
   ids:[selectedProduct],
 };
-console.log(data);
+
 mutate(
   {data},
   {
@@ -71,7 +99,8 @@ setDeleteModal(false)
   };
 
   return (
-    <div className={styles.container}>
+   <>
+{token? <div className={styles.container}>
       <table className={styles.table}>
         <thead>
           <tr>
@@ -129,7 +158,8 @@ setDeleteModal(false)
         </tbody>
       </table>
     <Toaster />
-    </div>
+    </div> :null}
+   </>
   );
 }
 
